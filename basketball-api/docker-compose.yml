@@ -1,0 +1,14 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "80:5000"
+    volumes:
+      - //Users/bkibazohi/Desktop/backend_project/basketball-api:/Users/bkibazohi/Desktop/backend_project/basketball-api
+    links:
+      - db:mongodb
+    container_name: basketballapi_web_1
+  db:
+    image: mongo:3.0.2
+    container_name: baseketballapi_db_1
